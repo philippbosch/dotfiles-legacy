@@ -8,9 +8,21 @@ Ryan Tomayko [here](https://github.com/rtomayko/dotfiles#readme).
 Usage
 -----
 
+First install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
+
     $ cd $HOME
-    $ git clone git@github.com:philippbosch/dotfiles.git .
+    $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    $ chsh -s /bin/zsh
 
-Then install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
+Logout. Login. Then …
 
-    $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh 
+    $ rm .zshrc
+    $ git init
+    $ echo "*" >> .git/info/exclude
+    $ git remote add origin git://github.com/philippbosch/dotfiles.git
+    $ git pull origin master
+    $ cd .oh-my-zsh
+    $ git remote add pb git://github.com/philippbosch/oh-my-zsh.git
+    $ git pull pb master
+
+Logout. Login. Finished.
