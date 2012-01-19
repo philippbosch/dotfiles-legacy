@@ -58,3 +58,6 @@ alias virtualenv="virtualenv --no-site-packages"
 
 # Python
 export PYTHONSTARTUP=$HOME/.python/startup.py
+
+# virtualenv
+export VIRTUAL_ENV_DISABLE_PROMPT=1
