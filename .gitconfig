@@ -1,0 +1,44 @@
+[user]
+	email = hello@pb.io
+	name = Philipp Bosch
+
+[core]
+	excludesfile = ~/.gitignore
+	quotepath = false
+
+[github]
+	user = philippbosch
+
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+
+[alias]
+	st = status -s -b
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+	hist = log --pretty=format:\"%h | %ad | %s%d [%an]\" --graph --date=short
+	msg = commit --allow-empty -m
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	unstage = reset HEAD
+	new = ls-files --others --exclude-standard
+	added = diff --cached --name-only
+	rv = remote -v
+
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+[branch "develop"]
+	remote = origin
+	merge = refs/heads/develop
+
+[diff]
+	# For Github-style word diffs
+	wordRegex = [^[:space:]]
+	tool = Kaleidoscope
+
+[push]
+	# Push current branch even if you've never pushed it before
+	default = current
