@@ -46,6 +46,9 @@ function chpwd() {
     l
 }
 
+# Locale
+export LC_ALL=en_US.utf8
+
 # Aliases
 alias l="ls -aloG"
 alias rm="rm -i"
