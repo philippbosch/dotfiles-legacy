@@ -40,10 +40,6 @@ export PIP_LOG_FILE="/tmp/pip-log.txt"
 export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
 export DJANGO_CONF="dev"
 
-# Locale
-export LC_ALL=de_DE.UTF-8
-export LANG=de_DE.UTF-8
-
 # Show list of files after each cd
 function chpwd() {
     emulate -LR zsh
