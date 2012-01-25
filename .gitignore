@@ -86,3 +86,8 @@ doc/
 
 ### https://github.com/github/gitignore/blob/master/Compass.gitignore
 .sass-cache
+
+
+
+### joe backup files
+*~
