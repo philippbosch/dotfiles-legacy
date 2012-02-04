@@ -26,7 +26,8 @@ The following lines are only for my custom oh-my-zsh theme. If you don't
 need that change `ZSH_THEME` in `.zshrc` accordingly.
 
     $ cd .oh-my-zsh
-    $ git remote add pb git://github.com/philippbosch/oh-my-zsh.git
-    $ git pull pb master
+    $ git remote rename origin upstream
+    $ git remote add origin git://github.com/philippbosch/oh-my-zsh.git
+    $ git pull origin master
 
 Logout. Login. Finished.
