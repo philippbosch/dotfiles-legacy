@@ -40,6 +40,14 @@ export PIP_LOG_FILE="/tmp/pip-log.txt"
 export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
 export DJANGO_CONF="dev"
 
+if [[ ! -z "`command -v mate_wait`" ]] ; then
+    export EDITOR="`which mate_wait`"
+elif [[ ! -z "`command -v joe`" ]] ; then
+    export EDITOR="`which joe`"
+elif [[ ! -z "`command -v nano`" ]] ; then
+    export EDITOR="`which nano`"
+fi
+
 # Show list of files after each cd
 function chpwd() {
     emulate -LR zsh
