@@ -34,7 +34,7 @@ plugins=(git django gem git-flow github heroku node npm pip redis-cli ruby termi
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
 
 export PIP_LOG_FILE="/tmp/pip-log.txt"
 export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
