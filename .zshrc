@@ -70,3 +70,8 @@ export PYTHONSTARTUP=$HOME/.python/startup.py
 
 # virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Put customizations into .zshrc.local. They will be included here if the file exists.
+if [[ -e .zshrc.local ]] ; then
+    source .zshrc.local
+fi
