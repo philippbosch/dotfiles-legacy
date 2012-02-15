@@ -48,10 +48,18 @@ elif [[ ! -z "`command -v nano`" ]] ; then
     export EDITOR="`which nano`"
 fi
 
-# Show list of files after each cd
-function chpwd() {
+# autoenv (https://github.com/kennethreitz/autoenv)
+source ~/.autoenv/activate.sh
+function cd() {
     emulate -LR zsh
-    l
+    if builtin cd "$@"
+    then
+        l
+        autoenv_init
+        return 0
+    else
+        return $?
+    fi
 }
 
 # Locale
