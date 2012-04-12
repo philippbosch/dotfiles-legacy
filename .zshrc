@@ -72,6 +72,14 @@ alias l="ls -aloG"
 alias rm="rm -i"
 alias less="less -R"
 alias virtualenv="virtualenv --no-site-packages"
+alias ipaddr="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# OSX-specific aliases
+if [ ! "$SSH_TTY" ] && [[ "$OSTYPE" =~ "darwin" ]] ; then
+    alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+    alias flush="dscacheutil -flushcache"
+    alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+fi
 
 # Python
 export PYTHONSTARTUP=$HOME/.python/startup.py
