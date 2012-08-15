@@ -40,13 +40,17 @@ export PIP_LOG_FILE="/tmp/pip-log.txt"
 export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
 export DJANGO_CONF="dev"
 
-if [[ ! -z "`command -v mate_wait`" ]] ; then
+if [[ ! -z "`command -v choc_wait`" ]] ; then
+    export EDITOR="`which choc_wait`"
+elif [[ ! -z "`command -v mate_wait`" ]] ; then
     export EDITOR="`which mate_wait`"
 elif [[ ! -z "`command -v joe`" ]] ; then
     export EDITOR="`which joe`"
 elif [[ ! -z "`command -v nano`" ]] ; then
     export EDITOR="`which nano`"
 fi
+
+export LESSEDIT="$EDITOR %f"
 
 # autoenv (https://github.com/kennethreitz/autoenv)
 source ~/.autoenv/activate.sh
@@ -63,22 +67,25 @@ function cd() {
 }
 
 # Locale
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
 
 # Aliases
 alias l="ls -aloG"
 alias rm="rm -i"
 alias less="less -R"
-alias virtualenv="virtualenv --no-site-packages"
+alias virtualenv="virtualenv --distribute"
 alias ipaddr="dig +short myip.opendns.com @resolver1.opendns.com"
+function hs() { heroku $@ --remote staging }
+function hp() { heroku $@ --remote production }
 
 # OSX-specific aliases
 if [ ! "$SSH_TTY" ] && [[ "$OSTYPE" =~ "darwin" ]] ; then
     alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
     alias flush="dscacheutil -flushcache"
     alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+    alias imageoptim="open -a /Applications/ImageOptim.app"
 fi
 
 # Python
