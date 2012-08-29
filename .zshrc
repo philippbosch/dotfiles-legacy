@@ -29,7 +29,7 @@ ZSH_THEME="philippbosch"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django gem git-flow github heroku node npm pip redis-cli ruby terminitor)
+plugins=(git django gem git-flow github heroku node npm pip redis-cli ruby terminitor knife)
 
 source $ZSH/oh-my-zsh.sh
 
