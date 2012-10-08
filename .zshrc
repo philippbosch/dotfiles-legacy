@@ -77,6 +77,7 @@ alias rm="rm -i"
 alias less="less -R"
 alias virtualenv="virtualenv --distribute"
 alias ipaddr="dig +short myip.opendns.com @resolver1.opendns.com"
+function pygrep() { find . -type f -name \*.py -exec grep -H $@ \{\} \; }
 function hs() { heroku $@ --remote staging }
 function hp() { heroku $@ --remote production }
 
