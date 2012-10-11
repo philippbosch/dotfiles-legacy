@@ -29,7 +29,7 @@ ZSH_THEME="philippbosch"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django gem git-flow github heroku node npm pip redis-cli ruby terminitor knife)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,14 +37,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
 
 export PIP_LOG_FILE="/tmp/pip-log.txt"
-export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
-export DJANGO_CONF="dev"
 
-if [[ ! -z "`command -v choc_wait`" ]] ; then
-    export EDITOR="`which choc_wait`"
-elif [[ ! -z "`command -v mate_wait`" ]] ; then
-    export EDITOR="`which mate_wait`"
-elif [[ ! -z "`command -v joe`" ]] ; then
+if [[ ! -z "`command -v joe`" ]] ; then
     export EDITOR="`which joe`"
 elif [[ ! -z "`command -v nano`" ]] ; then
     export EDITOR="`which nano`"
@@ -75,19 +69,8 @@ function cd() {
 alias l="ls -aloG"
 alias rm="rm -i"
 alias less="less -R"
-alias virtualenv="virtualenv --distribute"
 alias ipaddr="dig +short myip.opendns.com @resolver1.opendns.com"
 function pygrep() { find . -type f -name \*.py -exec grep -H $@ \{\} \; }
-function hs() { heroku $@ --remote staging }
-function hp() { heroku $@ --remote production }
-
-# OSX-specific aliases
-if [ ! "$SSH_TTY" ] && [[ "$OSTYPE" =~ "darwin" ]] ; then
-    alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
-    alias flush="dscacheutil -flushcache"
-    alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-    alias imageoptim="open -a /Applications/ImageOptim.app"
-fi
 
 # Python
 export PYTHONSTARTUP=$HOME/.python/startup.py
