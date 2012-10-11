@@ -6,9 +6,6 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 
-[github]
-	user = philippbosch
-
 [color]
 	ui = auto
 	diff = auto
