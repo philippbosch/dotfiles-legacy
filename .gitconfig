@@ -1,10 +1,13 @@
 [user]
-	email = hello@syntop.io
-	name = SYNTOP
+	email = hello@pb.io
+	name = Philipp Bosch
 
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
+
+[github]
+	user = philippbosch
 
 [color]
 	ui = auto
