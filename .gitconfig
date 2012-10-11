@@ -1,6 +1,6 @@
 [user]
-	email = hello@pb.io
-	name = Philipp Bosch
+	email = hello@syntop.io
+	name = SYNTOP
 
 [core]
 	excludesfile = ~/.gitignore
