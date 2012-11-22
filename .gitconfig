@@ -34,17 +34,9 @@
 	remote = origin
 	merge = refs/heads/develop
 
-[diff]
-	# For Github-style word diffs
-	wordRegex = [^[:space:]]
-	tool = Kaleidoscope
-
 [push]
 	# Push current branch even if you've never pushed it before
 	default = current
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[credential]
-	helper = osxkeychain
+
+[include]
+	path = .gitconfig.local
