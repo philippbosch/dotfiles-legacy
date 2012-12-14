@@ -51,20 +51,6 @@ fi
 
 export LESSEDIT="$EDITOR %f"
 
-# autoenv (https://github.com/kennethreitz/autoenv)
-source ~/.autoenv/activate.sh
-function cd() {
-    emulate -LR zsh
-    if builtin cd "$@"
-    then
-        l
-        autoenv_init
-        return 0
-    else
-        return $?
-    fi
-}
-
 # Locale
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
@@ -99,5 +85,22 @@ if [[ -e .zshrc.local ]] ; then
     source .zshrc.local
 fi
 
-
+# Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# autoenv (https://github.com/kennethreitz/autoenv)
+source ~/.autoenv/activate.sh
+
+# (must come after oh-my-zsh because it overwrites the cd() defined there)
+function cd() {
+    emulate -LR zsh
+    if builtin cd "$@"
+    then
+        l
+        autoenv_init
+        return 0
+    else
+        return $?
+    fi
+}
+
