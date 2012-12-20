@@ -31,6 +31,8 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git django gem git-flow github heroku node npm pip redis-cli ruby terminitor knife)
 
+# Source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
@@ -84,9 +86,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 if [[ -e .zshrc.local ]] ; then
     source .zshrc.local
 fi
-
-# Source oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # autoenv (https://github.com/kennethreitz/autoenv)
 source ~/.autoenv/activate.sh
