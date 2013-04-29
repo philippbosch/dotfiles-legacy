@@ -22,12 +22,9 @@ Logout. Login. Then …
     git remote add origin git://github.com/philippbosch/dotfiles.git
     git pull origin master
 
-The following lines are only for my custom oh-my-zsh theme. If you don't 
+The following line is only for my custom oh-my-zsh theme. If you don't 
 need that change `ZSH_THEME` in `.zshrc` accordingly.
 
-    cd .oh-my-zsh
-    git remote rename origin upstream
-    git remote add origin git://github.com/philippbosch/oh-my-zsh.git
-    git pull origin master
+    curl https://raw.github.com/philippbosch/oh-my-zsh/master/themes/philippbosch.zsh-theme > .oh-my-zsh/themes/philippbosch.zsh-theme
 
 Logout. Login. Finished.
