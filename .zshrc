@@ -41,7 +41,9 @@ export PIP_LOG_FILE="/tmp/pip-log.txt"
 export DJANGO_COLORS="dark;http_success=black,bold;http_redirect=white"
 export DJANGO_CONF="dev"
 
-if [[ ! -z "`command -v choc_wait`" ]] ; then
+if [[ ! -z "`command -v subl`" ]] ; then
+    export EDITOR="`which subl` -w"
+elif [[ ! -z "`command -v choc_wait`" ]] ; then
     export EDITOR="`which choc_wait`"
 elif [[ ! -z "`command -v mate_wait`" ]] ; then
     export EDITOR="`which mate_wait`"
