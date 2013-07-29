@@ -56,9 +56,9 @@ fi
 export LESSEDIT="$EDITOR %f"
 
 # Locale
-# export LC_ALL=en_US.UTF-8
-# export LANG=en_US.UTF-8
-# export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 # Aliases
 alias l="ls -aloG"
@@ -90,7 +90,9 @@ if [[ -e .zshrc.local ]] ; then
 fi
 
 # autoenv (https://github.com/kennethreitz/autoenv)
-source ~/.autoenv/activate.sh
+if [[ -e /usr/local/opt/autoenv/activate.sh ]] ; then
+    source /usr/local/opt/autoenv/activate.sh
+fi
 
 # (must come after oh-my-zsh because it overwrites the cd() defined there)
 function cd() {
