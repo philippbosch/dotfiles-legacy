@@ -61,14 +61,9 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # Aliases
-alias l="ls -aloG"
-alias rm="rm -i"
-alias less="less -R"
-alias virtualenv="virtualenv --distribute"
-alias ipaddr="dig +short myip.opendns.com @resolver1.opendns.com"
-function pygrep() { find . -type f -name \*.py -exec grep -H $@ \{\} \; }
-function hs() { heroku $@ --remote staging }
-function hp() { heroku $@ --remote production }
+if [ -e .aliases ] ; then
+    source .aliases
+fi
 
 # OSX-specific aliases
 if [ ! "$SSH_TTY" ] && [[ "$OSTYPE" =~ "darwin" ]] ; then
